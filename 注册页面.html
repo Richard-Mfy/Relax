@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ZN-ch">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        var password2 = document.getElementById("password2").value;
+        if (password != password2) {
+            alert("两次输入密码不一致！");
+            // document.getElementById("password").value = "";
+            document.getElementById("password2").value = "";
+        }
+    }
+  </script>
+  <script>
+    var last = null; // 用于保存上一个变色的标签
+    function changeColor(event) {
+        var p = event.target;
+        if (last) { // 如果存在上一个变色的标签，就恢复它的颜色
+            last.style.color = "black";
+        }
+        p.style.color = "red"; // 改变当前标签的颜色
+        last = p; // 更新上一个变色的标签
+    }
+  </script>
+  <style>
+  ul {
+    width: 200px;
+    margin: 0 auto;
+    list-style-type: none;
+  }
+  h1 {
+    text-align: center;
+  }
+  </style>
+  <title>注册页面</title>
+</head>
+
+<body>
+  <h1>按要求完成注册</h1>
+  <!-- 生成一个注册页面 -->
+  <form action="注册页面.html" method="get">
+    <!--创建一个十行的表格-->
+    <table align="center" border="0" cellpadding="10" cellspacing="10">
+      <!-- 创建第一行 -->
+      <tr>
+        <!-- 创建第一列 -->
+        <td>
+          <span><label for="username" onclick="changeColor(event)">用户名：</label></span>
+        </td>
+        <td>
+          <span><input type="text" name="username" value="" maxlength="16" id="username"></span>
+        </td>
+      </tr>
+      <!-- 创建第二行 -->
+      <tr>
+        <!-- 创建第二列 -->
+        <td>
+          <span><label for="password" onclick="changeColor(event)">密码：</label></span>
+        </td>
+        <td>
+          <span><input type="password" name="password" value="" maxlength="16" id="password"></span>
+        </td>
+      </tr>
+      <!-- 创建第三行 -->
+      <tr>
+        <!-- 创建第三列 -->
+        <td>
+          <span><label for="password2" onclick="changeColor(event)">确认密码：</label></span>
+        </td>
+        <td>
+          <span><input type="password" name="password2" value="" maxlength="16" id="password2" onblur="checkPassword()"></span>
+        </td>
+      </tr>
+      <!-- 创建第四行 -->
+      <tr>
+        <!-- 创建第四列 -->
+        <td>
+          <span><label for="sex">性别：</label></span>
+        </td>
+        <td>
+          <span>
+            <input type="radio" name="sex" id="nan" ><label for="nan">男</label>
+            <input type="radio" name="sex" id="nv" checked="checked"><label for="nv">女</label>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <!-- 创建第十行 -->
+        <td>
+          <!-- 选择生日 -->
+          <span><label for="birthday">生日：</label></span>
+        </td>
+        <td>
+          <span><input type="date" name="birthday" id="birthday"></span>
+        <!-- 选择生日 -->
+        </td>
+      </tr>
+      <!-- 创建第五行 -->
+      <tr>
+        <!-- 创建第五列 -->
+        <td>
+          <span><label for="email" onclick="changeColor(event)">邮箱：</label></span>
+        </td>
+        <td>
+          <span><input type="email" name="email" value="" maxlength="16" id="email"></span>
+        </td>
+      </tr>
+      <!-- 创建第六行 -->
+      <tr>
+        <!-- 创建第六列 -->
+        <td>
+          <span><label for="tel" onclick="changeColor(event)">电话：</label></span>
+        </td>
+        <td>
+          <span><input type="tel" name="tel" value="" maxlength="16" id="tel"></span>
+        </td>
+      </tr>
+      <!-- 创建第七行 -->
+      <tr>
+        <!-- 创建第七列 -->
+        <td>
+          <span><label for="address" onclick="changeColor(event)">地址：</label></span>
+        </td>
+        <td>
+          <span><input type="text" name="address" value="" maxlength="16" id="address"></span>
+        </td>
+      </tr>
+      <!-- 创建第八行 -->
+      <tr>
+        <!-- 创建第八列 -->
+        <td>
+          <span><label for="message" onclick="changeColor(event)">自我介绍：</label></span>
+        </td>
+        <td>
+          <span><textarea name="message" id="message"></textarea></span>
+        </td>
+      </tr>
+      <!-- 创建第九行 -->
+      <tr>
+        <!-- 创建第九列 -->
+        <td>
+          <span><input type="submit" value="提交"></span>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <br>
+  <!-- 创建一个三行的无序列表 -->
+  <ul asign="center">
+    <li>
+      <a href="注册页面.html">注册页面</a>
+    </li>
+    <li>
+      <a href="二次密码确认.html">二次密码确认</a>
+    </li>
+    <li>
+      <a href="点击改变颜色并显示id.html">点击改变颜色并显示id</a>
+    </li>
+  </ul>
+</body>
+</html>
