@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ZN-ch" >
+<head>
+  <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌊 森岛 🌊</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg width="100%" height="100%" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg_refl">
+<use href="#everything"> 
+</use>
+<g filter="url(#reflection)">
+	<use href="#everything" transform="scale (1.1, -.33) translate(0 -512)" transform-origin="center" opacity="0.5"/>
+</g>
+<defs>
+	<g id="everything">
+		<use href="#wave" x="256" y="196"/>
+		<use href="#morph1" x="256" y="196"/>
+		<use href="#morph2" x="256" y="196"/>
+		<use href="#morph3" x="256" y="196"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" 
+		dur="4s" repeatCount="indefinite" calcMode="spline"
+		keyTimes="0;0.5;1"
+		keySplines="0.7 0 0.3 1; 0.7 0 0.3 1"
+		values="0 -16; 0 16; 0 -16"/>
+	</g>
+
+	<ellipse id="wave" stroke-width="12" stroke="#c3abd1">
+		<animate attributeName="rx" dur="2s" repeatCount="indefinite" calcMode="spline" begin="100ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="96;48;132;182;182"/>
+		<animate attributeName="ry" dur="2s" repeatCount="indefinite" calcMode="spline" begin="100ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="96;64;92;182;182"/>
+		<animate attributeName="opacity" dur="2s" repeatCount="indefinite" calcMode="linear" begin="100ms"
+			keyTimes="0;0.74;0.75;0.9;1"
+			values="0;0;1;0;0"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+	</ellipse>
+	<ellipse id="morph1" rx="96" ry="96" stroke-width="12" stroke="#c3abd1">
+		<animate attributeName="rx" dur="2s" repeatCount="indefinite" calcMode="spline" begin="100ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="96;48;132;90;96"/>
+		<animate attributeName="ry" dur="2s" repeatCount="indefinite" calcMode="spline" begin="100ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="96;64;92;90;96"/>
+		<animate attributeName="stroke" dur="2s" repeatCount="indefinite" begin="100ms"
+			keyTimes="0;0.65;0.75;1"
+			values="#c3abd1;#c3abd1;#908bbf;#c3abd1"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+	</ellipse>
+	<ellipse id="morph2" rx="76" ry="76" stroke-width="12" stroke="#908bbf">
+		<animate attributeName="rx" dur="2s" repeatCount="indefinite" calcMode="spline" begin="50ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="76;32;102;70;76"/>
+		<animate attributeName="ry" dur="2s" repeatCount="indefinite" calcMode="spline" begin="50ms"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="76;44;72;70;76"/>
+		<animate attributeName="stroke" dur="2s" repeatCount="indefinite" begin="100ms"
+			keyTimes="0;0.65;0.75;1"
+			values="#908bbf;#908bbf;#332765;#908bbf"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+	</ellipse>
+	<ellipse id="morph3" rx="56" ry="56" stroke-width="12" stroke="#332765" fill="#332765">
+		<animate attributeName="rx" dur="2s" repeatCount="indefinite" calcMode="spline"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="56;20;72;50;56"/>
+		<animate attributeName="ry" dur="2s" repeatCount="indefinite" calcMode="spline"
+			keyTimes="0;0.65;0.75;0.9;1"
+			keySplines="1 0 0.4 0.8; 0 0.7 1 1; 1 1 1 1; 1 1 1 1"
+			values="56;20;42;50;56"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+	</ellipse>
+
+	<filter id="reflection">
+		<feTurbulence id="refl_turb" type="turbulence" numOctaves="2" result="turbulence"/>
+		<feDisplacementMap in2="turbulence" in="SourceGraphic" scale="32" xChannelSelector="G" yChannelSelector="R"/>
+		<animate id="anim_turb" dur="100s" href="#refl_turb" attributeName="baseFrequency" repeatCount="indefinite"
+			values="0.005 0.05; 0.003 0.005; 0.005 0.05"/>
+	</filter>
+
+	<linearGradient id="fresnel" gradientTransform="rotate(90)">
+    	<stop offset="0" stop-color="#c3abd100"/>
+    	<stop offset="1" stop-color="#c3abd1a0"/>
+    </linearGradient>
+</defs>
+</svg>
+<!-- partial -->
+<div class="container">
+	<div class="profile">
+			<img src="src/mihayo.bmp" alt="Profile image" class="profile-image">
+			<div class="profile-info">
+					<h1 class="profile-name">米哈游</h1>
+					<p class="profile-bio">TECH OTAKUS SAVE THE WORLD</p>
+					<div class="profile-links">
+							<a href="https://www.miyoushe.com/dby/" target="_blank" class="profile-link"><img src="src/mys.bmp" alt="Profile image" title="米游社" class="profile-link"></a>
+							<a href="https://ys.mihoyo.com/" target="_blank" class="profile-link"><img src="src/ys.bmp" alt="Profile image" title="原神" class="profile-link"></a>
+							<a href="https://sr.mihoyo.com/" target="_blank" class="profile-link"><img src="src/sr.bmp" alt="Profile image" title="崩坏:星穹铁道" class="profile-link"></a>
+							<a href="https://zzz.mihoyo.com/" target="_blank" class="profile-link"><img src="src/zzz.bmp" alt="Profile image" title="绝区零" class="profile-link"></a>
+					</div>
+			</div>
+	</div>
+</div>
+
+</body>
+</html>
