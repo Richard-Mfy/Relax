@@ -42,7 +42,7 @@ body{
   background-attachment:fixed;
   background-position:center bottom;
   /* 引入 svg 图像作为背景图像 */
-  background-image: url("src/svg.svg");
+  background-image: url("../src/svg.svg");
 }
 
 .container {
